@@ -1,0 +1,22 @@
+{# {% extends 'navfoot.html.twig' %}
+
+
+{% block navbar %}
+    {{ parent() }} 
+        <div class="container">
+        <div class="row">
+        {% for produit in produits %}  
+            <div class="details">            
+                <div class="col">
+                    <img src="{{asset('uploads/images/' ~ produit.image) }}">
+                </div>
+                <div class="col text-center justify-content-center">
+                    <li>{{ produit.nom }}</li>
+                    <li>{{ produit.description }}</li>
+                    <li>{{ produit.prix }}€</li>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %} #}

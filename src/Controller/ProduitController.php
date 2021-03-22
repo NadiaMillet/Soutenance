@@ -117,7 +117,23 @@ class ProduitController extends AbstractController
         return $desc;
     }
 
-
+    
+    /**
+    * @Route("/details/{id<\d+>}", name="details" )
+    */
+    public function details(Request $request)
+    {
+        // $repository = variable par défaut symfony visant la class voulu
+        // get Repository va aller au niveau des données dans la table précisée
+        // SELECT query
+        $repository = $this->getDoctrine()->getRepository(Produit::class);
+        // a ce stade il a accès au données
+        // je veux stocker dans la variable $produits TOUT mes produits
+        $produits = $repository->findAll();
+        //La méthode findAll() retourne toutes les entités. Le format du retour est un simple Array, que vous pouvez parcourir (avec un foreach par exemple) pour utiliser les objets qu'il contient
+        // entre guillmet c'est le nom utilisé sur Twig
+    return $this->render('produit/details.html.twig', ['produits'=>$produits]);
+    }
     // /**
     //  * @Route("/produit/list", name="produitlist" )
     //  */

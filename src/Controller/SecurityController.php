@@ -25,16 +25,28 @@ class SecurityController extends AbstractController
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
         
+      
 
 
 
-        // $repoprod=$this->getDoctrine()->getRepository(Users::class);
+        $users=$this->getDoctrine()->getRepository(Users::class);
+        $userid=$users->findOneBy(['email'=>$lastUsername]);
 
         // $admin = $repoprod->findBy(['roles'=>'ROLE_ADMIN']);
-        // if ($admin) {
-        //     return $this->redirectToRoute('admin_home');
-        // }
+
+        if ($users->find($userid)->getRoles()=='ROLE_ADMIN') {
+            return $this->redirectToRoute('admin_home');
+        }
     }
+
+    /**
+     * @Route("/admin/home", name="admin_home")
+     */
+    public function home()
+    {
+        return $this->render('/acceuiladmin/homeadmin.html.twig');
+    }
+     
 
 
     /**
