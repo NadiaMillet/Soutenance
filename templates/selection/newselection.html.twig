@@ -1,0 +1,14 @@
+
+    {% extends 'navfoot.html.twig' %}
+    {% form_theme formSelection 'bootstrap_4_layout.html.twig' %}
+
+    {% block navbar %}
+        {{parent()}}
+        {% block selection %}
+            <div class="container w-50 mt-5">
+                {{ form(formSelection) }} 
+            </div>
+        {% endblock %}
+        
+
+    {% endblock %}

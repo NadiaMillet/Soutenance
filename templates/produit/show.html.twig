@@ -1,0 +1,55 @@
+{% extends 'navfoot.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+<link href="{{asset('/css/theme.css')}}" rel="stylesheet" media="all">    
+{% endblock %}
+{% block navbar %}
+    {{ parent() }}
+  <div class="container liste-produits">
+    <h1 class="text-center titre1-page-produit my-5">Mes produits en ligne</h1>
+    <button type="button" class="btn btn-secondary btn-lg btn-block mb-3">
+      <a href="{{path("new_produit")}}">Ajouter un nouveau produit</a>
+    </button>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Image</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+      {% for produit in produits %} 
+        <tbody>
+          <tr>
+            <th scope="row">{{ produit.id }}</th>
+            <td>{{ produit.nom }}</td>
+            <td>{{ produit.description }}</td>
+            <td>{{ produit.prix }}€</td>
+            <td>{{ produit.categorie.nom }}</td>
+            <td><img src="{{asset('uploads/images/' ~ produit.image) }}" class="col-2"></td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary mb-2">
+                <a href="{{ path('edit', {'id': produit.id }) }}">Modifier</a>
+              </button>
+              <button type="button" class="btn btn-outline-danger">
+                <a href="{{ path('delete', {'id': produit.id }) }}">Supprimer</a>
+              </button></td>
+          </tr>
+        </tbody>
+      {% endfor %}
+    </table>
+    <button type="button" class="btn btn-secondary btn-lg btn-block mb-3">
+      <a href="{{path("new_produit")}}">Ajouter un nouveau produit</a>
+    </button>
+    <button type="button" class="btn btn-secondary btn-lg btn-retour mb-3">
+        <a href="{{path("les_incontournables")}}">Page lesincontournables</a>
+    </button>
+  </div>
+{% endblock %}    
+
+  

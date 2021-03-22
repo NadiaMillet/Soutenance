@@ -1,0 +1,165 @@
+*
+{
+    box-sizing: border-box;
+}
+nav.primary-navigation {
+    display: block;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 16px;
+    border: solid 2px rgb(199, 156, 169);
+    background-color: rgb(199, 156, 169);
+  }
+  
+  nav.primary-navigation ul li {
+    list-style: none;
+    /**border-left: 2px solid #746150;*/
+    display: inline-block;
+    padding: 0 50px;    
+    margin-top: 1rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Arapey', serif;      
+    text-transform: uppercase;
+  }
+  nav.primary-navigation li a {
+    color: black;
+  }
+  nav.primary-navigation li a:hover {
+    color: #6b4e34;
+  }
+  nav.primary-navigation li:hover {
+    cursor: pointer;
+  }
+  nav.primary-navigation ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding-left: 0;
+    left: 0;
+    display: none;
+    background: white;
+  }
+  nav.primary-navigation ul li:hover > ul,
+  nav.primary-navigation ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    min-width: 250px;
+    text-align: left;
+    padding-top: 10px;
+    box-shadow: 0px 3px 5px -1px #ccc;
+    z-index: 4;
+  }
+  nav.primary-navigation ul li ul li {
+    clear: both;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    border-style: none;
+  }
+  nav.primary-navigation ul li ul li a:hover {
+
+    border-bottom: 2px solid #b49c8b;
+    transition: all 0.3s ease;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #96806b;
+  }
+  
+ /* ul li ul li a {
+    transition: all 0.5s ease;
+  } */
+
+/************************** ACCUEIL *****************************/
+.firsttitle
+ {
+    font-family: 'Allura', cursive;
+    font-size: 5rem;
+ }
+h2
+ {
+    font-family: 'Arapey', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+ }
+ h5
+ {
+    font-family: 'Arapey', serif;      
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+ }
+
+/* bannière */
+.chocolaterie-française-cacao
+{
+  background-color: rgb(245, 238, 233);
+}
+
+/* selection du moment*/
+.selection-du-moment
+{
+  margin:5px;
+}
+.titre-selection-du-moment
+{
+  font-family: 'Arapey', serif;      
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+.img-selection
+{
+  width:280px;
+  height: 320px;
+}
+.img-selection
+{
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -ms-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+.img-selection:hover
+{
+  transform:scale(1.1);
+  border: solid 30px rgb(158, 129, 120);
+}
+/* .cadre-img-selection:hover {
+	opacity: 0.5;
+	transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-in;
+} */
+.selection-du-moment .btn-lg
+{
+  background-color: rgb(158, 129, 120);
+  font-family: 'Arapey', serif;      
+  text-transform: uppercase;
+}
+
+
+
+
+/***************************** /PRODUIT/LISTE ***************************/
+.titre1-page-produit 
+{
+  font-family: 'Arapey', serif;      
+  text-transform: uppercase;
+}
+.liste-produits a, .btn-retour
+{
+  color:black;
+  font-weight: bold;
+}
+
+/******************************* /LESINCONTOURNABLES ********************/
+.card .chocolats-incon
+{
+  border: none;
+}

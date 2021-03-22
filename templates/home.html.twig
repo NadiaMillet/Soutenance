@@ -1,0 +1,90 @@
+{% extends 'navfoot.html.twig' %}
+
+
+{% block navbar %}
+    {{ parent() }}
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="{{path("les_incontournables")}}">
+        <img src="{{asset('/img/chocolaterie-paris-marc-pignot.png') }}" class="d-block w-100" alt="coffret de chocolat"> 
+      </a>      
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('/img/macarons-paris-17-chocolaterie.png') }}" class="d-block w-100" alt="macarons roses"> 
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('/img/patisserie-paris-17.png') }}" class="d-block w-100" alt="pâtisserie au chocolat">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+  <section class="banner chocolaterie-française-cacao">
+    <div class="p-5">
+      <div class="container-fluid">
+        <div class="row">                
+          <div class="col-lg-4 my-5">
+            <div class="text-center">
+              <img src="{{asset('/img/cacao-pur-beurre.PNG') }}">
+              <h5 class="mt-5  titre-banniere">pur beurre de cacao</h5>
+            </div>
+          </div>
+          <div class="col-lg-4 my-5">
+            <div class="text-center">
+              <img src="{{asset('/img/chocolaterie-medaillee.PNG') }}">
+              <h5 class="mt-2 titre-banniere">chocolaterie classée 10ème de paris</h5>
+            </div>
+          </div>
+          <div class="col-lg-4 my-4">
+            <div class="text-center">
+              <img src="{{asset('/img/chocolaterie-française.PNG') }}">
+              <h5 class="titre-banniere">fabrication française</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--INCLUDE DE SELECTION.TWIG.HTML-->
+{% block selection %}
+  {% for selection in selections %} 
+    <h3 class="titre-selection-du-moment text-center mt-5">{{selection.titre}}</h3>
+      <section class="selection-du-moment">
+          <div class="p-5">
+            <div class="container-fluid">
+              <div class="row">                
+                <div class="col-lg-4 my-5 ">
+                    <div class="text-center cadre-img-selection">
+                    <img src="{{asset('uploads/images/' ~ selection.img1) }}" class="img-selection">
+                    </div>
+                </div>
+                <div class="col-lg-4 my-5 cadre-img-selection">
+                    <div class="text-center">
+                    <img src="{{asset('uploads/images/' ~ selection.img2) }}" class="img-selection">
+                    </div>
+                </div>
+                <div class="col-lg-4 my-5 cadre-img-selection">
+                    <div class="text-center">
+                    <img src="{{asset('uploads/images/' ~ selection.img3) }}" class="img-selection">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center my-5">
+                  <button type="button" class="btn btn-lg btn-block w-75">NOUS CONTACTER POUR COMMANDER</button>
+                </div>
+              </div>                    
+            </div>
+          </div>        
+      </section>
+  {% endfor %}
+{% endblock %}
+{% endblock %}
