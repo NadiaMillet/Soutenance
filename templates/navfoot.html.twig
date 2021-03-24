@@ -5,6 +5,8 @@
         <title>{% block title %}Marc Pignot Saint Sëans - Maître Artisan Chocolatier {% endblock %}</title>
         {% block stylesheets %}
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
            <link rel="preconnect" href="https://fonts.gstatic.com">
            <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Allura&family=Lovers+Quarrel&family=Parisienne&display=swap" rel="stylesheet">
@@ -18,30 +20,114 @@
     </head>
     <body>
         {% block navbar %}
-            <div class="row">
+<div class="row">
                 <div class="container">
                     <div onclick="location.href='{{path("home")}}' ; "style="cursor:pointer;">
                     <h1 class="text-center firsttitle mt-5">Marc Pignot Saint-Sëans</h1>   
-                    <h2 class="text-center secondtitle mt-5">maître artisan chocolatier pâtissier</h2>   
+                    <h2 class="text-center secondtitle my-5">maître artisan chocolatier pâtissier</h2>   
                     </div>               
-                    <nav role="navigation" class="primary-navigation">
-                        <ul> 
-                            <li><a href="#">Mes Fabrications &dtrif;</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Bonbons de Chocolats & Coffrets</a></li>
-                                <li><a href="#">Tablettes</a></li>
-                                <li><a href="#">Macarons</a></li>
-                                <li><a href="#">Pâtisserie</a></li>
-                                <li><a href="{{path("les_incontournables")}}">Les Incoutournables</a></li>
-                            </ul>
-                            </li>
-                            <li><a href="#">Ateliers</a></li>
-                            <li><a href="#">La Maison</a></li>
-                            <li><a href="{{path("contact")}}">Nous Contacter</a></li>
-                        </ul>
-                    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-customn nav-rose">
+            <div class="container-fluid ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+                <ul class="navbar-nav text-center mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mes Fabrications
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{path("coffret")}}">Coffrets et Ballotins</a></li>
+                        <li><a class="dropdown-item" href="{{path("tablette")}}">Tablettes</a></li>
+                        <li><a class="dropdown-item" href="{{path("macaron")}}">Macarons</a></li>
+                        <li><a class="dropdown-item" href="{{path("les_incontournables")}}">Les Incontournables</a></li>
+                        <li><a class="dropdown-item" href="{{path("patisserie")}}">Pâtisserie</a></li>
+
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="{{path("atelier")}}">Ateliers</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="{{path("laMaison")}}">La Maison</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="{{path("contact")}}">Nous contacter</a>
+                    </li>
+                    
+                </ul>
                 </div>
             </div>
+        </nav>
+        {% endblock %}
+
+        {% block footer %}     
+            <footer class=" bg-light ">
+                <div class="container-fluid pt-5">
+                    <div class="row">
+                        <div class="col-12 groupe-footer">                    
+                            <div class="col-lg-4 col-md-12 col-sm-12 marc-footer text-center">
+                                <h5 class="text-uppercase">Marc Pignot Saint Sëns</h5>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet quis lorem vel bibendum. 
+                                </p>
+                                <p> 
+                                    Integer mauris magna, aliquet eget dui vel, tempus placerat justo. Nunc convallis lorem laoreet orci condimentum, nec consequat leo rutrum.
+                                </p>
+                            </div>
+                            <div class="col-lg-4 col-md-8 col-sm-12  icone-contact text-center">
+                                <h5 class="text-uppercase">Contact</h5>
+                                <p>
+                                    Commande uniquement par télephone</br>
+                                    <p><a href="tel:+33158578760"><i class="fas fa-phone"></i> 01 58 57 87 60</a></p>
+                                    <p><a href="https://goo.gl/maps/3uxxo1zEsceFNX59A"><i class="fas fa-home"></i> 38 rue de la Félicité 75017 - PARIS</a></p>    
+                                    <p><i class="fas fa-bus"></i> Métro Malesherbes ou Pont Cardinet</p>
+                                    <p><a href="mailto:Pignot.chocolatier@gmail.com"><i class="fas fa-envelope"></i> Pignot.chocolatier@gmail.com</a></p>   
+                                </p>
+                            </div> 
+                            <div class="col-lg-3 col-md-8 col-sm-12 icone-réseaux text-center">
+                                <h5 class="text-uppercase">Réseaux</h5>
+                                <p>
+                                    Rejoignez nos réseaux</br>
+                                    <p><a href="https://www.instagram.com/marcpignotsaintsaenschocolatie/"><i class="fab fa-instagram"></i></a></p>
+                                    <p><a href="https://fr-fr.facebook.com/MarcPignotMaitreArtisanChocolatierPatissier/"><i class="fab fa-facebook-f"></i></a></p>
+                                    <p><a href="https://twitter.com/pignot_marc"><i class="fab fa-twitter"></i></a></p>   
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="col-12 d-flex justify-content-center mx-auto p-3 text-center nav-footer">
+                            <li class="nav-item">
+                            <a class="nav-link active" href="#">Coffrets</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link active" href="#">Tablette</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link active" href="{{path("contact")}}">Macarons</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link active" href="#">Ateliers</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link active" href="#">La Maison</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link active" href="{{path("contact")}}">Nous contacter</a>
+                            </li>
+                        </div>
+                          <div class="text-center p-3">
+                            © 2021 Copyright:
+                            <a class="text-dark" href="https://mdbootstrap.com/">Marc Pignot Saint Sëans</a>
+                        </div>
+                        <div class=" d-flex justify-content-center text center">
+                            <a href="#!" class="text-secondary">Mentions légales</a>   
+                            <a href="#!" class="text-secondary">Conditions Générales de Vente</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+                            
         {% endblock %}
     </body>
 </html>

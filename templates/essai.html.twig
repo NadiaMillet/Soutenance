@@ -1,0 +1,170 @@
+    INCOURNABLECONTROLLER
+    
+    // /**
+    //  * @Route("/produit/list", name="produitlist" )
+    //  */
+    // public function details(Request $request, Produit $id)
+    // {
+    //     $reposcat = $this->getDoctrine()->getRepository(Categorie::class);
+        
+    //     $idincon = $reposcat->findBy(['nom'=>'incontournable']);
+    //     // $repository = variable par défaut symfony visant la class voulu
+    //     // get Repository va aller au niveau des données dans la table précisée
+    //     // SELECT query
+    //     $repository = $this->getDoctrine()->getRepository(Produit::class);
+    //     // a ce stade il a accès au données
+    //     // je veux stocker dans la variable $produits TOUT mes produits
+    //     $produits = $repository->find($id);
+    //     //La méthode findAll() retourne toutes les entités. Le format du retour est un simple Array, que vous pouvez parcourir (avec un foreach par exemple) pour utiliser les objets qu'il contient
+    //     // entre guillmet c'est le nom utilisé sur Twig
+    // return $this->render('incontournable/details.html.twig', ['produits'=>$produits]);
+    // }
+
+    
+    // /**
+    // * @Route("/details/{id<\d+>}", name="details")
+    // */
+    // public function details()
+    // {
+    //     // $repository = $this->getDoctrine()->getRepository(Produit::class);
+    //     // $incontournables = $repository->find($productId);
+    //     // if (isset($_GET['/lesincontournables/details'])) {
+    //     //     $id = $_GET['id'];
+    //     $reposcat = $this->getDoctrine()->getRepository(Categorie::class);
+        
+    //     $idincon = $reposcat->findBy(['nom'=>'incontournable']);
+
+    //     $repoprod =$this->getDoctrine()->getRepository(Produit::class);
+
+    //     $incontournables = $repoprod->findBy(['categorie'=>$idincon]);
+    //     $repository = $this->getDoctrine()->getRepository(Produit::class);
+    //     // a ce stade il a accès au données
+    //     // je veux stocker dans la variable $produits TOUT mes produits
+    //     $produits = $repository->findAll();
+
+    //     return $this->render('incontournable/details.html.twig', ['incontournables'=>$incontournables, 'produits'=>$produits]);
+    // }
+
+
+
+
+    PRODUITCONTROLLER
+
+        // /**
+    // * @Route("/details/{id<\d+>}", name="details" )
+    // */
+    // public function details(Request $request)
+    // {
+    //     // $repository = variable par défaut symfony visant la class voulu
+    //     // get Repository va aller au niveau des données dans la table précisée
+    //     // SELECT query
+    //     $repository = $this->getDoctrine()->getRepository(Produit::class);
+    //     // a ce stade il a accès au données
+    //     // je veux stocker dans la variable $produits TOUT mes produits
+    //     $produits = $repository->findAll();
+    //     //La méthode findAll() retourne toutes les entités. Le format du retour est un simple Array, que vous pouvez parcourir (avec un foreach par exemple) pour utiliser les objets qu'il contient
+    //     // entre guillmet c'est le nom utilisé sur Twig
+    //     $repo2=$this->getDoctrine()->getRepository(Categorie::class);
+    //     $categories = $repo2->findAll();
+
+    //     // $repo3=$this->getDoctrine()->getRepository(Categorie::class);
+    //     // $categories = $repo3->findBy(['nom'=>'macaron']);
+
+    //     // $repo4=$this->getDoctrine()->getRepository(Categorie::class);
+    //     // $categories = $repo4->findBy(['nom'=>'tablette']);
+
+    //     // $repo5=$this->getDoctrine()->getRepository(Categorie::class);
+    //     // $categories = $repo5->findBy(['nom'=>'coffret']);
+
+    // return $this->render('produit/details.html.twig', ['produits'=>$produits, 'categorie'=>$categories]);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////// css
+
+    *
+{
+    box-sizing: border-box;
+}
+nav.primary-navigation {
+    display: block;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 16px;
+    border: solid 2px rgb(199, 156, 169);
+    background-color: rgb(199, 156, 169);
+  }
+  
+  nav.primary-navigation ul li {
+    list-style: none;
+    /**border-left: 2px solid #746150;*/
+    display: inline-block;
+    padding: 0 50px;    
+    margin-top: 1rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Arapey', serif;      
+    text-transform: uppercase;
+  }
+  nav.primary-navigation li a {
+    color: black;
+  }
+  nav.primary-navigation li a:hover {
+    color: #6b4e34;
+  }
+  nav.primary-navigation li:hover {
+    cursor: pointer;
+  }
+  nav.primary-navigation ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding-left: 0;
+    left: 0;
+    display: none;
+    background: white;
+  }
+  nav.primary-navigation ul li:hover > ul,
+  nav.primary-navigation ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    min-width: 250px;
+    text-align: left;
+    padding-top: 10px;
+    box-shadow: 0px 3px 5px -1px #ccc;
+    z-index: 4;
+  }
+  nav.primary-navigation ul li ul li {
+    clear: both;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    border-style: none;
+  }
+  nav.primary-navigation ul li ul li a:hover {
+
+    border-bottom: 2px solid #b49c8b;
+    transition: all 0.3s ease;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+
+
+
+

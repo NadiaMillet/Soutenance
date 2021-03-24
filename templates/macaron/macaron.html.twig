@@ -1,0 +1,30 @@
+{% extends 'navfoot.html.twig' %}
+
+
+{% block navbar %}
+    {{ parent() }} 
+
+    {% block macaron %}
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-row justify-content-evenly my-5 flex-wrap ">                
+                        {% for macaron in macarons %}         
+                            <div class="card col-3 text-center chocolats-incon m-2">
+                                <img src="{{asset('uploads/images/' ~ macaron.image) }}" class="card-img-top" alt="..." style=" height:300px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ macaron.nom }}</h5>
+                                    <p class="card-text">{{ macaron.description }}</p>
+                                    <p class="card-text">{{ macaron.prix }}€</p>
+                                  {#  <a href="{{ path('descriptionMacaron', {'id': macaron.id }) }}"class= "btn btn-light">En savoir plus</a> #}
+                                </div>
+                            </div>             
+                        {% endfor %}
+                    </div> 
+                </div>   
+            </div>
+    {% endblock %}
+
+        
+{% endblock %}
+
+

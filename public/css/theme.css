@@ -1,80 +1,22 @@
-*
+.nav-rose
 {
-    box-sizing: border-box;
+  background-color:rgb(199, 156, 169);
 }
-nav.primary-navigation {
-    display: block;
-    margin-top: 70px;
-    text-align: center;
-    font-size: 16px;
-    border: solid 2px rgb(199, 156, 169);
-    background-color: rgb(199, 156, 169);
-  }
-  
-  nav.primary-navigation ul li {
-    list-style: none;
-    /**border-left: 2px solid #746150;*/
-    display: inline-block;
-    padding: 0 50px;    
-    margin-top: 1rem;
-    position: relative;
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Arapey', serif;      
-    text-transform: uppercase;
-  }
-  nav.primary-navigation li a {
-    color: black;
-  }
-  nav.primary-navigation li a:hover {
-    color: #6b4e34;
-  }
-  nav.primary-navigation li:hover {
-    cursor: pointer;
-  }
-  nav.primary-navigation ul li ul {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    padding-left: 0;
-    left: 0;
-    display: none;
-    background: white;
-  }
-  nav.primary-navigation ul li:hover > ul,
-  nav.primary-navigation ul li ul:hover {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-    min-width: 250px;
-    text-align: left;
-    padding-top: 10px;
-    box-shadow: 0px 3px 5px -1px #ccc;
-    z-index: 4;
-  }
-  nav.primary-navigation ul li ul li {
-    clear: both;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 20px;
-    border-style: none;
-  }
-  nav.primary-navigation ul li ul li a:hover {
 
-    border-bottom: 2px solid #b49c8b;
-    transition: all 0.3s ease;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  a:hover {
+nav li a
+{
+  font-family: 'Arapey', serif;      
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 18px;
+  margin-right: 70px;
+  color: rgb(104, 48, 48);
+  font-weight: bold;
+}
+ nav li a:hover {
     color: #96806b;
   }
-  
- /* ul li ul li a {
-    transition: all 0.5s ease;
-  } */
+
 
 /************************** ACCUEIL *****************************/
 .firsttitle
@@ -88,12 +30,14 @@ h2
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1rem;
+    color: rgb(104, 48, 48);
  }
  h5
  {
     font-family: 'Arapey', serif;      
     text-transform: uppercase;
     letter-spacing: 0.5rem;
+    color: rgb(104, 48, 48);
  }
 
 /* bannière */
@@ -162,4 +106,57 @@ h2
 .card .chocolats-incon
 {
   border: none;
+}
+
+/****************************** FOOTER ***********************/
+.groupe-footer{
+  display: flex;
+  justify-content: center;
+}
+.groupe-footer p a{
+  text-decoration: none;
+  color: black
+}
+.icone-réseaux i{
+  font-size: xx-large;
+  display: inline-block;
+  text-align: center;
+}
+.icone-réseaux i:hover{
+color: burlywood;
+}
+.nav-footer{
+  background-color: rgb(212, 191, 198);
+}
+footer li a{
+  list-style-type: none;
+  text-decoration: none;
+  color: rgb(92, 75, 67);
+}
+footer li{
+  list-style-type: none;
+}
+footer a:hover{
+  color: burlywood;
+  }
+
+/**************************  *****************************/
+/******************PATISSERIE SAMIA***********************/
+.big{
+  font-family: 'Arapey', serif;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 100px; 
+  text-transform: uppercase; 
+  color: #6b4e34;
+  letter-spacing: 0.5rem;
+}
+.big h1{
+  color: #6b4e34;
+  letter-spacing: 5px;
+  
+}
+
+.btn-contact-patisserie{
+  text-decoration: none;
 }

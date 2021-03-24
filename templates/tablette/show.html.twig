@@ -1,0 +1,27 @@
+
+{% extends 'navfoot.html.twig' %}
+
+
+{% block navbar %}
+    {{ parent() }} 
+
+    {% block tablette %}
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-row justify-content-evenly my-5 flex-wrap ">                
+                        {% for tablette in tablettes %}         
+                            <div class="card col-3 text-center chocolats-incon m-2">
+                                <img src="{{asset('uploads/images/' ~ tablette.image) }}" class="card-img-top" alt="..." style=" height:300px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ tablette.nom }}</h5>
+                                    <p class="card-text">{{ tablette.description }}</p>
+                                    <p class="card-text">{{ tablette.prix }}€</p>
+                                    <a href="{{ path("contact") }}" class="btn btn-light">Nous contacter</a>
+                                </div>
+                            </div>             
+                        {% endfor %}
+                    </div> 
+                </div>   
+            </div>
+    {% endblock %}
+{% endblock %}

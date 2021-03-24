@@ -1,0 +1,34 @@
+
+{% extends 'navfoot.html.twig' %}
+
+
+{% block navbar %}
+    {{ parent() }} 
+
+    {% block coffret %}
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-row justify-content-evenly my-5 flex-wrap ">                
+                        {% for coffret in coffrets %}         
+                            <div class="card col-lg-3 col-md-6 col-sm-12 text-center chocolats-incon m-2">
+                                <img src="{{asset('uploads/images/' ~ coffret.image) }}" class="card-img-top" alt="..." style=" height:300px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ coffret.nom }}</h5>
+                                    <p class="card-text">{{ coffret.description }}</p>
+                                    <p class="card-text">{{ coffret.prix }}€</p>
+                                    <a href="{{ path('descript', {'id': coffret.id }) }}" class="btn btn-light">En savoir plus</a> 
+                                </div>
+                            </div>             
+                        {% endfor %}
+                    </div> 
+                </div>   
+            </div>
+    {% endblock %}
+{% endblock %}
+
+
+
+{# 
+<a href="{{ path('delete_route_name', {'id': entity.id }) }}">Delete</a>
+
+<a href="{{ path('edit_route_name', {'id': entity.id }) }}">Edit</a> #}

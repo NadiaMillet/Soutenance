@@ -9,9 +9,10 @@
             <button type="button" class="btn btn-secondary btn-retour">
                 <a href="{{path("produitlist")}}" style="color:white;">Retourner à la liste des produits</a>
             </button>
-            <button type="button" class="btn btn-secondary btn-retour">
-                <a href="{{path("les_incontournables")}}" style="color:white;">Page lesincontournables</a>
-            </button>
-        
+         {% block footer %}
+         {{parent()}}
+           {% endblock %}
+  
+         
     {% endblock %}
   

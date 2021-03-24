@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\ProduitType;
 use App\Entity\Produit;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class ProduitController extends AbstractController
 {
@@ -61,10 +62,20 @@ class ProduitController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // va effectuer la requête d'UPDATE en base de données
 
+            // dans file on récupère une donnée grâce au getter de l'image de produit.php
             $file = $produit->getImage();
+
+            // Donner un nom unique -> md5 - hash / uniqid — Génère un identifiant unique / guessExtension - récupère l'extension
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            // A ce moment $file = l'image récupérée avec un nom unique.extension
+            // move = fonction par défaut qui redirigie un fichier->va dans parameters de services.yaml->suit le chemin donné dans images_directory (public/uploads/images)
             $file->move($this->getParameter('images_directory'), $fileName);
+
+            // dans champs image tu l'associes au nom $filename
             $produit->setImage($fileName);
+
+            // éxe requête SQL
             $this->getDoctrine()->getManager()->flush();
         }
 
@@ -118,37 +129,18 @@ class ProduitController extends AbstractController
     }
 
     
+    ///////////////////////////// AFFICHAGE DETAILS PRODUIT GENERIQUE /////////////////
     /**
-    * @Route("/details/{id<\d+>}", name="details" )
-    */
-    public function details(Request $request)
+     * @Route("/details/{id<\d+>}", name="details" )
+     */
+    public function details(int $id): Response
     {
-        // $repository = variable par défaut symfony visant la class voulu
-        // get Repository va aller au niveau des données dans la table précisée
-        // SELECT query
-        $repository = $this->getDoctrine()->getRepository(Produit::class);
-        // a ce stade il a accès au données
-        // je veux stocker dans la variable $produits TOUT mes produits
-        $produits = $repository->findAll();
-        //La méthode findAll() retourne toutes les entités. Le format du retour est un simple Array, que vous pouvez parcourir (avec un foreach par exemple) pour utiliser les objets qu'il contient
-        // entre guillmet c'est le nom utilisé sur Twig
-    return $this->render('produit/details.html.twig', ['produits'=>$produits]);
+
+        $produits = $this->getDoctrine()
+            ->getRepository(Produit::class)
+            ->find($id);
+
+    return $this->render('incontournable/details.html.twig', ['produits'=>$produits]);
     }
-    // /**
-    //  * @Route("/produit/list", name="produitlist" )
-    //  */
-    // public function details(Request $request, Produit $id)
-    // {
-    //     // $repository = variable par défaut symfony visant la class voulu
-    //     // get Repository va aller au niveau des données dans la table précisée
-    //     // SELECT query
-    //     $repository = $this->getDoctrine()->getRepository(Produit::class);
-    //     // a ce stade il a accès au données
-    //     // je veux stocker dans la variable $produits TOUT mes produits
-    //     $produits = $repository->find($id);
-    //     //La méthode findAll() retourne toutes les entités. Le format du retour est un simple Array, que vous pouvez parcourir (avec un foreach par exemple) pour utiliser les objets qu'il contient
-    //     // entre guillmet c'est le nom utilisé sur Twig
-    // return $this->render('incontournable/details.html.twig', ['produits'=>$produits]);
-    // }
     
 }

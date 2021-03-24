@@ -22,21 +22,26 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
-        
+        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);      
       
 
 
 
-        $users=$this->getDoctrine()->getRepository(Users::class);
-        $userid=$users->findOneBy(['email'=>$lastUsername]);
+        // $users=$this->getDoctrine()->getRepository(Users::class);
+        // $userid=$users->findOneBy(['email'=>$lastUsername]);
 
-        // $admin = $repoprod->findBy(['roles'=>'ROLE_ADMIN']);
+        // // $admin = $repoprod->findBy(['roles'=>'ROLE_ADMIN']);
 
-        if ($users->find($userid)->getRoles()=='ROLE_ADMIN') {
-            return $this->redirectToRoute('admin_home');
-        }
+        // if (in_array("ROLE_ADMIN", $users->find($userid)->getRoles())) 
+        // {
+        //     dump('il est bien admin');
+        //     return $this->render('/acceuiladmin/homeadmin.html.twig');
+            
+        // } else
+        // {
+        //     dump('il nest pas admin');
+            
+        // }
     }
 
     /**
@@ -56,4 +61,8 @@ class SecurityController extends AbstractController
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
+
+/**
+     * @Route("/login", name="app_login")
+     */
 }
