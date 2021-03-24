@@ -58,16 +58,35 @@
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-        
+
+
+              <!-- ///////////////// ADMIN AFFICHAGE ////////////////-->
+        {% if is_granted('ROLE_ADMIN') %}
+        <div class="border border-secondary p-5 mb-5 affichage-admin">
+            <p class="text-xl-center"> Bonjour Admin, accédez à vos éspaces directement depuis le liens ci-dessous ! </p> 
+            <button type="button" class="btn btn-secondary btn-retour">
+                <a href="{{path("produitlist")}}" style="color:white;">Afficher la liste des produits</a>
+            </button>
+
+            <button type="button" class="btn btn-secondary btn-retour text-white">
+                <a href="{{path("new_produit")}}" class="text-white">Ajouter un nouveau produit</a>
+            </button>
+            
+            {# <button type="button" class="btn btn-secondary btn-retour text-white">
+                <a href="{{ path('selection_edit', {'id': selection.id }) }}" class="text-white">Modifier la selection du moment</a>
+            </button> #}
+        </div>
+        {% endif %} 
+      <!-- ///////////////// CONNECTE ////////////////-->
         {% if app.user %} 
             <div class="border border-secondary p-5 mb-5">           
                 <div class="mb-3">
-                    Hello, vous êtes connecté en tant que {{ app.user.username }}
+                    Vous êtes connecté en tant que {{ app.user.username }}
                 </div>
                 <button class="btn btn-secondary"><a href="{{ path('app_logout') }}" style="color:white;" >Se déconnecter</a></button>
             </div>     
         {% endif %}
-       
+        <!-- ///////////////// FORM CONNEXION ////////////////-->
         <div class="border border-secondary p-5 mb-3">
             <h1 class="h3 mb-3 font-weight-normal">Se Connecter</h1> 
             <label for="inputEmail">Email</label>
@@ -93,16 +112,6 @@
            <button class="btn btn-secondary my-3" type="submit">
                 Se connecter
             </button>
-
-              <!-- ///////////////// REDIRECTION ////////////////
-  {%if is_granted('ROLE_ADMIN')%}
-                                <li class="nav-item ">
-                                    <a class="nav-link " href="{{path('app_logout')}}">Profil</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" aria-current="page" href="{{path('user')}}">Messages</a>
-                                </li>
-                            {%endif%} -->
         </div>
     </form>
 </div>

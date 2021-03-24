@@ -28,7 +28,7 @@ class ProduitType extends AbstractType
             ->add('poids', NumberType::class, ['required' => false])
             ->add('pieces', NumberType::class, ['required' => false])
             ->add('categorie', EntityType::class, ['class' => Categorie::class, 'choice_label' => 'nom'])             
-            ->add('save', SubmitType::class,
+            ->add('Ajouter', SubmitType::class,
             [
                 'attr' => ['class' => 'save'],
             ]);

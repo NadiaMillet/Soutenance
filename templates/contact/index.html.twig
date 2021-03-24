@@ -8,14 +8,17 @@
     {% form_theme contactForm 'bootstrap_4_layout.html.twig' %}
 
     <h5 class="text-center my-5">contacter nous</h5>
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
-    {% for message in app.flashes('message') %}
-        <div class="alert alert-success" role="alert">{{ message }}</div>
-    {% endfor %}
-    <div class="container d-flex justify-content-center">
 
-        <div class="border border-secondary p-5">
-        {{ form(contactForm)}}
+    <div class="container-fluid d-flex justify-content-center mb-5 formulaire-contact">
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+        {% for message in app.flashes('message') %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
+        <div class="border border-secondary p-5 col-8">
+            {{ form(contactForm)}}
+            {{ form_end(contactForm) }}
+        </div>
+    </div>
 {% endblock %}
