@@ -41,7 +41,7 @@ class SelectionType extends AbstractType
             // ])
             ->add('img2', FileType::class,array('data_class' => null),['label' => 'Ajouter la seconde image de votre sélection'])
             ->add('img3', FileType::class,array('data_class' => null),['label' => 'Ajouter la troisième image de votre sélection'])
-            ->add('save', SubmitType::class, 
+            ->add('Enregistrer', SubmitType::class, 
             [
                 'attr' => ['class' => 'save'],
             ]);

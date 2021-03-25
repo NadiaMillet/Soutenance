@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Selection;
+use Doctrine\ORM\Query\Expr\Select;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,22 +28,6 @@ class SecurityController extends AbstractController
       
 
 
-
-        // $users=$this->getDoctrine()->getRepository(Users::class);
-        // $userid=$users->findOneBy(['email'=>$lastUsername]);
-
-        // // $admin = $repoprod->findBy(['roles'=>'ROLE_ADMIN']);
-
-        // if (in_array("ROLE_ADMIN", $users->find($userid)->getRoles())) 
-        // {
-        //     dump('il est bien admin');
-        //     return $this->render('/acceuiladmin/homeadmin.html.twig');
-            
-        // } else
-        // {
-        //     dump('il nest pas admin');
-            
-        // }
     }
 
     /**
@@ -62,7 +48,18 @@ class SecurityController extends AbstractController
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
-/**
-     * @Route("/login", name="app_login")
-     */
+    // /**
+    //  * @Route("/login", name="app_login")
+    //  */
+    // public function adminAffichage(AuthenticationUtils $authenticationUtils): Response
+    // {
+    //     $error = $authenticationUtils->getLastAuthenticationError();
+    //     $lastUsername = $authenticationUtils->getLastUsername();
+    //     if ($this->isGranted('ROLE_ADMIN')) 
+    //     {
+    //         $repository = $this->getDoctrine()->getRepository(Selection::class);
+    //         $selection = $repository->findAll();
+    //         return $this->render('security/login.html.twig' , ['last_username' => $lastUsername, 'error' => $error , 'selection'=>$selection]);
+    //     }
+    // }
 }

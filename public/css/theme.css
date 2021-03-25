@@ -1,3 +1,5 @@
+/************************** BARRE DE NAV *****************************/
+/****** nadia *****/
 .nav-rose
 {
   background-color:rgb(199, 156, 169);
@@ -16,9 +18,10 @@ nav li a
  nav li a:hover {
     color: #96806b;
   }
-
+/********* ********/
 
 /************************** ACCUEIL *****************************/
+/******* nadia *******/
 .firsttitle
  {
     font-family: 'Allura', cursive;
@@ -75,22 +78,18 @@ h2
   transform:scale(1.1);
   border: solid 30px rgb(158, 129, 120);
 }
-/* .cadre-img-selection:hover {
-	opacity: 0.5;
-	transition: all 0.5s ease-out;
-	-webkit-transition: all 0.5s ease-in;
-} */
+
 .selection-du-moment .btn-lg
 {
   background-color: rgb(158, 129, 120);
   font-family: 'Arapey', serif;      
   text-transform: uppercase;
 }
-
-
+/******** *****/
 
 
 /***************************** /PRODUIT/LISTE ***************************/
+/****** nadia *****/
 .titre1-page-produit 
 {
   font-family: 'Arapey', serif;      
@@ -101,14 +100,21 @@ h2
   color:black;
   font-weight: bold;
 }
+/***** ****/
+
 
 /******************************* /LESINCONTOURNABLES ********************/
+/******* nadia *****/
 .card .chocolats-incon
 {
   border: none;
 }
+/**** **********/
+
 
 /****************************** FOOTER ***********************/
+/****** nadia *********/
+
 .groupe-footer{
   display: flex;
   justify-content: center;
@@ -139,6 +145,8 @@ footer li{
 footer a:hover{
   color: burlywood;
   }
+/***** ****/
+
 
 /**************************  *****************************/
 /******************PATISSERIE SAMIA***********************/
@@ -159,4 +167,31 @@ footer a:hover{
 
 .btn-contact-patisserie{
   text-decoration: none;
+}
+
+/****************************** CONTACT ***********************/
+/****** nadia *********/
+.formulaire-contact .btn{
+  margin-top: 1rem;
+  background-color: grey;
+  border: grey;
+  }
+/********* ********/
+
+/**************** BOUTON SAVE ***********/
+/****** nadia *********/
+.save
+{
+  background-color: rgb(174, 201, 171);
+  width: 25%;
+  margin: 2rem 0;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/**************** AFFICHAGE ADMIN ***********/
+/****** nadia *********/
+.affichage-admin p{
+  font-size: large;
 }
