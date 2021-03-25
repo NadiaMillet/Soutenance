@@ -2,61 +2,74 @@
 
   {% block navbar %}
   {{ parent() }}
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/image/chocolaterie-paris-marc-pignot.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="" class="d-block w-100" alt="...">
-    </div>
+  
+  
+  <section class="selection-du-moment">
+    <div class="p-5">
+      <div class="container-fluid">
+        <div class="row">                
+          <div class="col-lg-4 my-5 ">
+            <div class="text-center cadre-img-selection">
+              <img src="/images/photo-atelier-mp.png" class="img-selection">
+            </div>
+          </div>
+          <div class="col-lg-4 my-5 cadre-img-selection">
+            <div class="text-center">
+              <img src="/images/tour-eiffel.png" class="img-selection">
+            </div>
+          </div>
+          <div class="col-lg-4 my-5 cadre-img-selection">
+            <div class="text-center">
+              <img src="/images/photo-atelier-fille.jpg" class="img-selection">
+            </div>
+          </div>
+            
+          <div class="d-flex justify-content-center my-5">
+            <button type="button" class="btn btn-lg btn-block w-75"></button>
+          </div>
+ </div>
+          <h3 class=" lamaison-titre text-center mt-5"><strong>Nos ateliers</strong></h3>
+
+      <div class="d-flex justify-content-center p-3">
+        <article ><strong>
+            <div class="text-center mt-5">
+              <p>
+                Pour la découverte de la fabrication des chocolats, Pour les patissiers en herbes
+                <br>
+              Pour le plaisir de partager les secrets des maitres artisans,
+              </p>
+              <p>
+                Pour passer un moment de joie entre amis ou en famille, Et pour bien d'autres raisons
+                <br> 
+                Je vous acceuille en groupe de 2 à 6 personnes dans mon laboratoire, les samedi matin de 10 heures à midi<br>
+                 pour créer, déguster et emporter vos propres créations et éprouver de la fierté en les partageant avec votre entourage.         
+              </p>
+              <p>
+                    
+              </p> 
+              <p>  
+                De fabrication artisanale, toutes mes recettes sont produites sur place dans mon laboratoire de fabrication, 
+                avec des matières premières de très grande qualité choisies avec soin.
+              </p>
+              <p>        
+                En raison du contexte sanitaire actuel, je suis au regret de devoir suspendre les ateliers jusqu'en janvier 2021.
+                <br>
+                Prenez soin de vous 
+                </p>
+            </div>
+          </strong></article>
+        </div>  
+        </div>                  
+     
+         
+        
+  </div> 
     
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">next</span>
-  </button>
-</div>
-<p>
-Pour la découverte de la fabrication des chocolats,
-Pour les pâtissier en herbes,
-Pour le plaisir de partager les secrets des maîtres artisans, Pour passer un moment de joie entre amis ou en famille, Et pour bien d'autres raisons, je vous accueille en groupe de 2 à 6 personnes dans mon mon laboratoire les samedis matin de 10 heures à midi pour créer, déguster et emporter vos propres créations et éprouver de la fierté en les partageant avec votre entourage. En raison du contexte sanitaire actuel, je suis au regret de devoir suspendre les ateliers jusqu'en janvier 2021.
-Prenez soin de vous 
-<div> 
-<a href="contact"><span>contact</span></p></div>
- </p> 
-</div>
- 
-  <section>
-<footer class="footer">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 footer-navigation">
-            <h3><a href="#">Marc Pignot</a></h3>
-            
-        </div>
-        <div class="col-sm-6 col-md-4 footer-contacts">
-            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
-                <p><span class="new-line-span">38 Rue de la Félicité 75017 -Paris</p>
-            </div>
-            
-            <div><i class="fa fa-envelope footer-contacts-icon"></i>
-            <p> <a href="#" target="_blank">chocolateriemarcpignot@gmail.com</a></p>
-            </div>
-            <div>
-            <p><span><a href="#">Mention légales</a>  Marc Pignot tout droits réservés chocolaterie-Paris</span><a href="#">Conditions générales de vente (CGV)</a></p>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="col-md-4 footer-about">
-            
-            <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a></div>
-        </div>
-    </div>
-</footer>
-</section>
+  </section> 
+
 {% endblock %}
+
+
+    
+
  

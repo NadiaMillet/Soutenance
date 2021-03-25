@@ -35,7 +35,7 @@ public function macaron()
         //fouiller la table Produit grace à mon fichier Produit.php
         // on a crée une variable ($boite), dans laquelle je stocke une action. l'action de fouiller dans la table Produit.
         $macarons = $repoprod->findBy(['categorie'=>$boite]);
-        //Stocke moi dans la $macarons Produit, maintenant trouve moi dans la colonne catégorie l'id de macaron
+        //Stocke moi dans la $macarons Produit, maintenant trouve moi dans la colonne produit l'id de macaron
         //On a crée une variable ($macaron) qui stocke $repoprod (=fouiller dans la table produit)+ action de chercher la colonne "categorie"
 
         //AFFICHAGE DE LA PAGE macarons.html.twig
