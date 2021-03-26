@@ -20,6 +20,14 @@ class SelectionController extends AbstractController
         return $this->render('home.html.twig');
     }
 
+    // /**
+    // * @Route("/jennifer", name="jennifer")
+    // */
+    // public function navbar()
+    // {
+    //     return $this->render('essaijennifer.html.twig');
+    // }
+
     /**
     * @Route("", name="home")
     */
@@ -36,7 +44,25 @@ class SelectionController extends AbstractController
         // entre guillmet c'est le nom utilisé sur Twig
     return $this->render('home.html.twig', ['selections'=>$selections]);
     }
-    
+    ////////////////////////////////////// VOIR LA SELECTION /////////////////////////////////
+
+    /**
+     * @Route("/admin/selection/liste", name="selectionliste" )
+     */
+    public function liste(Request $request)
+    {
+        // $repository = variable par défaut symfony visant la class voulu
+        // get Repository va aller au niveau des données dans la table précisée
+        // SELECT query
+        $repository = $this->getDoctrine()->getRepository(Selection::class);
+        // a ce stade il a accès au données
+        // je veux stocker dans la variable $produits TOUT mes produits
+        $selections = $repository->findAll();
+        //La méthode findAll() retourne toutes les entités. Le format du retour est un simple Array, que vous pouvez parcourir (avec un foreach par exemple) pour utiliser les objets qu'il contient
+        // entre guillmet c'est le nom utilisé sur Twig
+    return $this->render('selection/show.html.twig', ['selections'=>$selections]);
+    }
+
     ////////////////////////////////////// EDITER LA SELECTION ////////////////////////////////
 
     /**

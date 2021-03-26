@@ -1,5 +1,5 @@
 {% extends 'navfoot.html.twig' %}
-
+{% form_theme registrationForm 'bootstrap_4_layout.html.twig' %}
 {# {% block title %}Register{% endblock %} #}
 
 {% block navbar %}
@@ -11,7 +11,7 @@
         {% endfor %}
 
 
-    <div class="border border-secondary p-5">
+    <div class="border border-secondary p-5 col-8">
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
@@ -21,4 +21,6 @@
 
         <button type="submit" class="btn btn-secondary my-3">S'inscrire</button>
     {{ form_end(registrationForm) }}
+    </div>
+    </div>
 {% endblock %}

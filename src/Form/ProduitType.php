@@ -35,6 +35,7 @@ class ProduitType extends AbstractType
             
     }
     
+    //Le composant OptionsResolver est un remplacement amélioré de la array_replacefonction PHP.
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

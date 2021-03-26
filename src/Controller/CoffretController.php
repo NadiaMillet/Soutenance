@@ -49,25 +49,4 @@ class CoffretController extends AbstractController
          return $this->render('/Coffret/descript.html.twig');
       }
 
-   //   /**
-   //    * @Route("/produit/list", name="produitlist" )
-   //    */
-   //   public function details(Request $request, Produit $id)
-   //   {
-   //     $reposcat = $this->getDoctrine()->getRepository(Categorie::class);
-        
-   //     $idcoffret = $reposcat->findBy(['nom'=>'coffret']);
-   //  //     // $repository = variable par défaut symfony visant la class voulu
-   //  //     // get Repository va aller au niveau des données dans la table précisée
-   //  //     // SELECT query
-   //     $repository = $this->getDoctrine()->getRepository(Produit::class);
-   //  //     // a ce stade il a accès au données
-   //  //     // je veux stocker dans la variable $produits TOUT mes produits
-   //     $produits = $repository->find($idcoffret);
-   //  //     //La méthode findAll() retourne toutes les entités. Le format du retour est un simple Array, que vous pouvez parcourir (avec un foreach par exemple) pour utiliser les objets qu'il contient
-   //  //     // entre guillmet c'est le nom utilisé sur Twig
-   //      return $this->render('Coffret/descript.html.twig', ['produits'=>$produits]);
-   //  }
-
-
 }
