@@ -127,20 +127,5 @@ class ProduitController extends AbstractController
         }
         return $desc;
     }
-
-    
-    ///////////////////////////// AFFICHAGE DETAILS PRODUIT GENERIQUE /////////////////
-    /**
-     * @Route("/details/{id<\d+>}", name="details" )
-     */
-    public function details(int $id): Response
-    {
-
-        $produits = $this->getDoctrine()
-            ->getRepository(Produit::class)
-            ->find($id);
-
-    return $this->render('incontournable/details.html.twig', ['produits'=>$produits]);
-    }
-    
+        
 }
