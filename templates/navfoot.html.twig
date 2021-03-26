@@ -55,6 +55,18 @@
                     <li class="nav-item">
                     <a class="nav-link active" href="{{path("contact")}}">Nous contacter</a>
                     </li>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('new_produit') }}">Ajout Produit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('selectionliste') }}">sélection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                        </li>
+                    {% endif %}
                     
                 </ul>
                 </div>
@@ -82,7 +94,7 @@
                                 <p>
                                     Commande uniquement par télephone</br>
                                     <p><a href="tel:+33158578760"><i class="fas fa-phone"></i> 01 58 57 87 60</a></p>
-                                    <p><a href="https://goo.gl/maps/3uxxo1zEsceFNX59A"><i class="fas fa-home"></i> 38 rue de la Félicité 75017 - PARIS</a></p>    
+                                    <p><a href="https://goo.gl/maps/3uxxo1zEsceFNX59A" target="_blank"><i class="fas fa-home"></i> 38 rue de la Félicité 75017 - PARIS</a></p>    
                                     <p><i class="fas fa-bus"></i> Métro Malesherbes ou Pont Cardinet</p>
                                     <p><a href="mailto:pignot.chocolatier@gmail.com"><i class="fas fa-envelope"></i> Pignot.chocolatier@gmail.com</a></p>   
                                 </p>
@@ -91,9 +103,9 @@
                                 <h5 class="text-uppercase">Réseaux</h5>
                                 <p>
                                     Rejoignez nos réseaux</br>
-                                    <p><a href="https://www.instagram.com/marcpignotsaintsaenschocolatie/"><i class="fab fa-instagram"></i></a></p>
-                                    <p><a href="https://fr-fr.facebook.com/MarcPignotMaitreArtisanChocolatierPatissier/"><i class="fab fa-facebook-f"></i></a></p>
-                                    <p><a href="https://twitter.com/pignot_marc"><i class="fab fa-twitter"></i></a></p>   
+                                    <p><a href="https://www.instagram.com/marcpignotsaintsaenschocolatie/" target="_blank"><i class="fab fa-instagram"></i></a></p>
+                                    <p><a href="https://fr-fr.facebook.com/MarcPignotMaitreArtisanChocolatierPatissier/" target="_blank"><i class="fab fa-facebook-f"></i></a></p>
+                                    <p><a href="https://twitter.com/pignot_marc" target="_blank"><i class="fab fa-twitter"></i></a></p>   
                                 </p>
                             </div>
                             </div> 
@@ -127,13 +139,15 @@
                             </div>
                         </div>
                           <div class="text-center p-3">
-                            © 2021 Copyright:
-                            <a class="text-dark" href="https://mdbootstrap.com/">Marc Pignot Saint Sëans</a>
+                            © 2021 Copyright
+                            <a class="text-dark">Marc Pignot Saint Sëans</a>
                         </div>
                         <div class=" d-flex justify-content-center text center">
-                            <a href="{{path("mention_legale")}}" class="text-secondary">Mentions légales</a>
+                            <a href="{{path("mention_legale")}}" class="text-secondary mr-3">Mentions légales</a> -   
                              
-                            <a href="{{path("conditions_generales")}}" class="text-secondary">Conditions Générales de Vente</a>
+                            <a href="{{path("conditions_generales")}}" class="text-secondary mr-3">Conditions Générales de Vente</a>-
+
+                            <a href="{{path("app_login")}}" class="text-secondary">Connexion Administrateur</a>
                         </div>
                     </div>
                 </div>

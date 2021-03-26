@@ -23,7 +23,7 @@ class ContactController extends AbstractController
             // on stock dans contact les données récup dans le form
             $contact = $form->getData();
 
-            // envoi du mail
+            // envoi du mail // objet du mmail
             $message = (new \Swift_Message('Nouveau Contact'))
 
                 // attribuer un expéditeur

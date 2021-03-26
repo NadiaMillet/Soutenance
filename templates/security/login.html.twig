@@ -60,7 +60,7 @@
 
 
 
-              <!-- ///////////////// ADMIN AFFICHAGE ////////////////-->
+        <!-- ///////////////// ADMIN AFFICHAGE ////////////////-->
         {% if is_granted('ROLE_ADMIN') %}
         <div class="border border-secondary p-5 mb-5 affichage-admin">
             <p class="text-xl-center"> Bonjour Admin, accédez à vos éspaces directement depuis le liens ci-dessous ! </p> 
@@ -72,9 +72,9 @@
                 <a href="{{path("new_produit")}}" class="text-white">Ajouter un nouveau produit</a>
             </button>
             
-            {# <button type="button" class="btn btn-secondary btn-retour text-white">
-                <a href="{{ path('selection_edit', {'id': selection.id }) }}" class="text-white">Modifier la selection du moment</a>
-            </button> #}
+            <button type="button" class="btn btn-secondary btn-retour text-white">
+                <a href="{{path("selectionliste")}}" class="text-white">Modifier la selection du moment</a>
+            </button>
         </div>
         {% endif %} 
       <!-- ///////////////// CONNECTE ////////////////-->

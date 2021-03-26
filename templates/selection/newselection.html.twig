@@ -5,9 +5,14 @@
     {% block navbar %}
         {{parent()}}
         {% block selection %}
-            <div class="container w-50 mt-5">
+        <h5 class="text-center mt-5"> Modifier ma sélection</h5>
+            <div class="container border border-secondary w-50 mt-5 p-5">
                 {{ form(formSelection) }} 
+                <button type="button" class="btn btn-secondary btn-block">
+                <a href="{{path("selectionliste")}}" class="text-white">Retour à la liste</a>
+                </button>
             </div>
+
         {% endblock %}
         
 

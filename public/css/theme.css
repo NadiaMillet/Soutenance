@@ -86,7 +86,10 @@ h2
   text-transform: uppercase;
 }
 /******** *****/
-
+.liste-selection-table img{
+  width: 100px;
+  height: 100px;
+}
 
 /***************************** /PRODUIT/LISTE ***************************/
 /****** nadia *****/

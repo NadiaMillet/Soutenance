@@ -43,14 +43,6 @@ public function macaron()
         // $ c'est utilisé sur le controller
     return $this->render('macaron/macaron.html.twig', ['macarons'=>$macarons]);
     
-    }
-
-//    /********************route de DESCRIPTION***/   
-  // /**
-// * @Route("/description", name="descriptionMacaron")
-// */
-// public function description()
-// { return $this->render('macaron/description.html.twig');}
- 
+    } 
 
 }
