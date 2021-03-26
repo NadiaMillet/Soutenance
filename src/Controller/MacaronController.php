@@ -50,8 +50,7 @@ public function macaron()
 // * @Route("/description", name="descriptionMacaron")
 // */
 // public function description()
-// { return $this->render('macaron/description.html.twig');} 
-
+// { return $this->render('macaron/description.html.twig');}
  
 
 }

@@ -49,7 +49,7 @@ class CoffretController extends AbstractController
          return $this->render('/Coffret/descript.html.twig');
       }
 
-   //   /**
+//   /**
    //    * @Route("/produit/list", name="produitlist" )
    //    */
    //   public function details(Request $request, Produit $id)
@@ -68,6 +68,6 @@ class CoffretController extends AbstractController
    //  //     // entre guillmet c'est le nom utilisé sur Twig
    //      return $this->render('Coffret/descript.html.twig', ['produits'=>$produits]);
    //  }
-
+   
 
 }

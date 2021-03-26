@@ -128,8 +128,7 @@ class ProduitController extends AbstractController
         return $desc;
     }
 
-    
-    ///////////////////////////// AFFICHAGE DETAILS PRODUIT GENERIQUE /////////////////
+ ///////////////////////////// AFFICHAGE DETAILS PRODUIT GENERIQUE /////////////////
     /**
      * @Route("/details/{id<\d+>}", name="details" )
      */
@@ -141,6 +140,8 @@ class ProduitController extends AbstractController
             ->find($id);
 
     return $this->render('incontournable/details.html.twig', ['produits'=>$produits]);
-    }
+    }   
+    
+
     
 }
