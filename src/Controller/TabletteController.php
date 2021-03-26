@@ -24,7 +24,7 @@ public function show()
     /**
      * @Route("/tablette", name="tablette" )
      */
-    public function showtablette(Request $request)
+    public function showtablette(Request $request)//Request récupère les infos
     {
         // get Repository va aller au niveau des données dans la table précisée
         // SELECT query

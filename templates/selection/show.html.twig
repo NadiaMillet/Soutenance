@@ -1,0 +1,46 @@
+{% extends 'navfoot.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+<link href="{{asset('/css/theme.css')}}" rel="stylesheet" media="all">    
+{% endblock %}
+{% block navbar %}
+    {{ parent() }}
+  <div class="container liste-selection-table">
+    <h5 class="text-center titre1-page-produit my-5">Ma sélection en ligne</h5>
+    {# <button type="button" class="btn btn-secondary btn-lg btn-block mb-3">
+      <a href="{{ path('selection_edit', {'id': selection.id }) }}">Modifier ma sélection</a>
+    </button> #}
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col-2">ID</th>
+            <th scope="col-2">Titre</th>
+            <th scope="col-2">Image 1</th>
+            <th scope="col-2">Image 2</th>
+            <th scope="col-2">Image 3</th>
+            <th scope="col-2">Action</th>
+          </tr>
+        </thead>
+      {% for selection in selections %} 
+        <tbody>
+          <tr>
+            <th scope="row">{{ selection.id }}</th>
+            <td class="col-2">{{ selection.titre }}</td>
+            <td><img src="{{asset('uploads/images/' ~ selection.img1) }}" class="col-4"></td>
+            <td><img src="{{asset('uploads/images/' ~ selection.img2) }}" class="col-4"></td>
+            <td><img src="{{asset('uploads/images/' ~ selection.img3) }}" class="col-4"></td>
+            <td>
+              <button type="button" class="btn btn-outline-secondary mb-2">
+                <a href="{{ path('selection_edit', {'id': selection.id }) }}">Modifier</a>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      {% endfor %}
+    </table>
+    <button type="button" class="btn btn-secondary btn-block mb-3">
+      <a href="{{path("home")}}" class="text-white">Voir ma sélection en ligne</a>
+    </button>
+  </div>
+{% endblock %}    

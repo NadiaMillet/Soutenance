@@ -15,7 +15,7 @@
                                     <h5 class="card-title">{{ incontournable.nom }}</h5>
                                     <p class="card-text">{{ incontournable.description }}</p>
                                     <p class="card-text">{{ incontournable.prix }}€</p>
-                                    <a href="{{ path('details', {'id': incontournable.id }) }}" class="btn btn-light">Nous contacter</a>
+                                    <a href="{{ path('contact') }}" class="btn btn-light">Nous contacter</a>
                                 </div>
                             </div>             
                         {% endfor %}
@@ -24,10 +24,3 @@
             </div>
     {% endblock %}
 {% endblock %}
-
-
-
-{# 
-<a href="{{ path('delete_route_name', {'id': entity.id }) }}">Delete</a>
-
-<a href="{{ path('edit_route_name', {'id': entity.id }) }}">Edit</a> #}
