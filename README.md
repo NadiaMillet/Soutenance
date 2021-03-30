@@ -1,6 +1,6 @@
 # Projet de Soutenance de fin de formation de développeuse web fullstack WF3
 Il s'agit de la création d'un site vitrine à usage commercial à destination des particuliers et des entreprises.
-Le but de ce site sera d'activer un levier de croissance en permettant au client : 
+Le but de ce site sera de remplacer le site actuel, d'activer un levier de croissance en permettant au client : 
 - Une plus grande visibilité grâce au web, l'outil aujourd'hui utilisée  par plus de 4 milliards de personnes.
 - Une fidélisation de la clientèle ayant besoin de s'informer d'avantage sur la boutique et pour contacter cette dernière plus facilement.
 - S'aligner à la concurrence, voir la réorienter vers la boutique de notre client.
@@ -32,6 +32,8 @@ Mise en place d'un système de sécurité pour toutes les pages ayant des foncti
 Ceci est permis grâce à la gestion des rôles mis en place. (path: ^/admin, roles: ROLE_ADMIN)
 
 Sécurisation des mots de passe lors de la création de compte grâce à la méthode de hash dans la base de donnée.
+
+
 
 
 
